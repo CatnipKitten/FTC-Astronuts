@@ -53,7 +53,7 @@ public class FtcOpModeRegister implements OpModeRegister {
      * The second parameter is the op mode class property
      *
      * If two or more op modes are registered with the same name, the app will display an error.
-     */
+
 
     manager.register("NullOp", NullOp.class);
 
@@ -63,7 +63,7 @@ public class FtcOpModeRegister implements OpModeRegister {
 
     /*
      * Uncomment any of the following lines if you want to register an op mode.
-     */
+
 
     //manager.register("AdafruitRGBExample", AdafruitRGBExample.class);
     //manager.register("MRRGBExample", MRRGBExample.class);
@@ -93,7 +93,7 @@ public class FtcOpModeRegister implements OpModeRegister {
     //manager.register("PushBotDriveTouch", PushBotDriveTouch.class);
     //manager.register("PushBotIrSeek", PushBotIrSeek.class);
     //manager.register("PushBotSquare", PushBotSquare.class);
-
+    */
     
     
   }
