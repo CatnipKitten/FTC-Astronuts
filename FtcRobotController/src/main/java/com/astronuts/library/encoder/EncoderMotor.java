@@ -5,7 +5,7 @@
  * Created 10/2/15
  */
 
-package com.qualcomm.ftcrobotcontroller;
+package com.astronuts.library.encoder;
 
 //Imports.
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -13,6 +13,8 @@ import com.qualcomm.robotcore.hardware.DcMotorController;
 
 //Main class.
 public class EncoderMotor {
+
+
 
     /*
     Class variables.
@@ -27,23 +29,28 @@ public class EncoderMotor {
     //Stores the current target value.
     private int motorTarget;
 
+    //This helps with incrementing.
+    private int motorPrime;
+
     //Stores the accuracy value.
     public int accuracy;
 
     //This is a flag for the use of the calling program.
     public boolean isDone;
 
+
+
     /*
     Main methods.
      */
 
     //Constructor.
-    public EncoderMotor(DcMotor motorMain, int accuracy){
+    public EncoderMotor(DcMotor motorMain){
 
         this.motorMain = motorMain;
         this.Case = 0;
         this.motorTarget = 0;
-        this.accuracy = accuracy;
+        this.accuracy = 5;
         this.isDone = false;
 
         runMode(DcMotorController.RunMode.RESET_ENCODERS);
@@ -130,12 +137,11 @@ public class EncoderMotor {
 
                 this.motorTarget = Target;
                 this.Case = 5;
+                this.motorPrime = 0;
 
                 break;
 
-            //CASE 5: Tests to see if the current position is within 5 of the target position.
-            //If true, the motor power will be set to zero, and the case will be set to 4 so a new target can be set.
-            //If false, the case will be set to 6, so the motor can move to the current target.
+            //CASE 5: Tests to see if the current position is within 5 of the target position. If true, the motor power will be set to zero, and the case will be set to 4 so a new target can be set. If false, the case will be set to 6, so the motor can move to the current target.
             case 5:
 
                 if(Math.abs(this.motorMain.getCurrentPosition()-this.motorTarget)<=this.accuracy){
@@ -155,10 +161,30 @@ public class EncoderMotor {
 
                 break;
 
-            //CASE 6: Sets the DC motor target to the desired target, the power is also set.
+            //CASE 6: this is in charge of incrementing the motor
             case 6:
 
-                this.motorMain.setTargetPosition(this.motorTarget);
+                if(!(this.motorMain.getCurrentPosition() - this.motorTarget < 100)){
+
+                    this.motorPrime = this.motorTarget/30 + this.motorPrime;
+
+
+                }
+
+                else{
+
+                    this.motorPrime = this.motorTarget;
+
+                }
+
+                this.Case = 7;
+
+                break;
+
+            //CASE 7: Sets the DC motor target to the desired target, the power is also set.
+            case 7:
+
+                this.motorMain.setTargetPosition(this.motorPrime);
                 this.motorMain.setPower(Power);
                 this.Case = 5; //Set to 5, to test if the target has been reached.
 
@@ -207,6 +233,8 @@ public class EncoderMotor {
 
     }
 
+
+
     /*
      WARNING: The use of these methods strongly discouraged.
      They are untested, as well as poor coding practice.
@@ -234,6 +262,22 @@ public class EncoderMotor {
     public void overrideMotor(DcMotor motorMain){
 
         this.motorMain = motorMain;
+
+    }
+
+    @Deprecated
+    //Changes the motor direction. (Somewhat redundant.)
+    public void overrideDirection(DcMotor.Direction Direction){
+
+        this.motorMain.setDirection(Direction);
+
+    }
+
+    @Deprecated
+    //Overrides motorPrime. (NEVER USE! REDUNDANT & DANGEROUS!)
+    public void overridePrime(int Prime){
+
+        this.motorPrime = Prime;
 
     }
 
