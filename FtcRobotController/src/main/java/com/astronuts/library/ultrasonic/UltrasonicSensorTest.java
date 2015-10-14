@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.UltrasonicSensor;
  * Meow
  */
 public class UltrasonicSensorTest extends OpMode {
-    //Makes variable for the Ultrasonic Sensor.
+    //Stores values from the Ultrasonic Sensor.
     UltrasonicSensor ultrasonicsensor;
 
     @Override
@@ -17,12 +17,16 @@ public class UltrasonicSensorTest extends OpMode {
         ultrasonicsensor = hardwareMap.ultrasonicSensor.get("ultrasonic_sensor");
     }
     public void loop () {
-        //Corrects the Raw data from the Ultrasonic Sensor.
+        //Gets Ultrasonic Value.
         double ultrasonic = ultrasonicsensor.getUltrasonicLevel();
+        //Corrects Ultrasonic values into Centimeters
         double ultracorrected = ultrasonic - 3;
 
-        //Displays the Data.
-        telemetry.addData("4-ultrasonic_sensor", ultrasonic);
-        telemetry.addData("Ultrasonic Corrected", ultracorrected);
+        double ultrainches = ultracorrected / 2.54
+
+        //Displays all the Data.
+        telemetry.addData("Raw Data", ultrasonic);
+        telemetry.addData("Centimeters", ultracorrected);
+        telemetry.addData("Inches", ultrainches);
     }
 }
