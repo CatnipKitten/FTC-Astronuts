@@ -17,7 +17,6 @@ public class test extends OpMode{
         motorRight.setDirection(DcMotor.Direction.REVERSE);
     }
     public void loop(){
-        left.move(1442, 0.2);
-        right.move(1442, 0.2);
+        Drive.driveByDistance(20, 'c', left, right);
     }
 }
