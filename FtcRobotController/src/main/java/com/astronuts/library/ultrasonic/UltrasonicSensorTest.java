@@ -4,6 +4,8 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 
 /**
+ * This OpMode is responsible for converting the ultrasonic value and displaying it on the Android
+ * phones. It calls all
  * Created by Prescott on 10/7/15.
  * Meow
  */
@@ -19,10 +21,10 @@ public class UltrasonicSensorTest extends OpMode {
     public void loop () {
         //Gets Ultrasonic Value.
         double ultrasonic = ultrasonicsensor.getUltrasonicLevel();
-        //Corrects Ultrasonic values into Centimeters
+        //Corrects Ultrasonic Values into Centimeters.
         double ultracorrected = ultrasonic - 3;
-
-        double ultrainches = ultracorrected / 2.54
+        //Correct the Ultrasonic Values into Inches.
+        double ultrainches = ultracorrected / 2.54;
 
         //Displays all the Data.
         telemetry.addData("Raw Data", ultrasonic);
