@@ -4,7 +4,6 @@ import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 
 /**
  * Created by Prescott on 10/14/15.
- * Meow
  */
 public class CentimetersCorrection {
     public double centimeters;
