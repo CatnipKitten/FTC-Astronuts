@@ -1,4 +1,4 @@
-package com.qualcomm.ftcrobotcontroller;
+package com.astronuts.library.ultrasonic;
 
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 

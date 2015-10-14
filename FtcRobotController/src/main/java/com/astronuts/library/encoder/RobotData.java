@@ -1,10 +1,13 @@
-package com.qualcomm.ftcrobotcontroller.encodermovement;
+package com.astronuts.library.encoder;
 
-import com.qualcomm.ftcrobotcontroller.EncoderMotor;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.HardwareMap;
+
+import java.util.Hashtable;
 
 public class RobotData {
+
+    Hashtable<DcMotor, EncoderMotor> motorTable = new Hashtable<DcMotor, EncoderMotor>();
+
     public static double motorRPM = 152;
     public static double getMotorRPM() { return motorRPM; }
     protected static void setMotorRPM(double rpm) { motorRPM = rpm; }
@@ -22,19 +25,10 @@ public class RobotData {
     public static double getForwardVelocity() { return forwardVelocity; }
     protected static void setForwardVelocity() { forwardVelocity = (getWheelRadius() / 2) * (getAngularVelocity() * 2); }
 
-    public EncoderMotor motorInit(DcMotor motorName, String motorNameString) {
+    /*public void motorInit(DcMotor motorName, EncoderMotor encoderName, String motorNameString) {
         HardwareMap hardwareMap = new HardwareMap();
         motorName = hardwareMap.dcMotor.get(motorNameString);
-        EncoderMotor encoderName;
         encoderName = new EncoderMotor(motorName, 5);
-        return encoderName;
-    }
-
-    public EncoderMotor motorInit(DcMotor motorName, String motorNameString, int tolerance) {
-        HardwareMap hardwareMap = new HardwareMap();
-        motorName = hardwareMap.dcMotor.get(motorNameString);
-        EncoderMotor encoderName;
-        encoderName = new EncoderMotor(motorName, tolerance);
-        return encoderName;
-    }
+        motorTable.put(motorName, encoderName);
+    }*/
 }
