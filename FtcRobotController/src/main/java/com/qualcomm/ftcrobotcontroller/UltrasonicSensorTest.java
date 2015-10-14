@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 
 /**
- * Created by prescott on 10/7/15.
+ * Created by Prescott on 10/7/15.
  */
 public class UltrasonicSensorTest extends OpMode {
     UltrasonicSensor ultrasonicsensor;
