@@ -6,8 +6,6 @@ import java.util.Hashtable;
 
 public class RobotData {
 
-    Hashtable<DcMotor, EncoderMotor> motorTable = new Hashtable<DcMotor, EncoderMotor>();
-
     public static double motorRPM = 152;
     public static double getMotorRPM() { return motorRPM; }
     protected static void setMotorRPM(double rpm) { motorRPM = rpm; }

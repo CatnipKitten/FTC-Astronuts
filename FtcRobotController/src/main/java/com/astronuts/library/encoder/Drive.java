@@ -13,8 +13,9 @@ public class Drive {
                 left.move(driveByDistanceCalculator(distance), power);
                 right.move(driveByDistanceCalculator(distance), power);
             case'i':
-                left.move(driveByDistanceCalculator(distance*0.393701), power);
-                right.move(driveByDistanceCalculator(distance*0.393701), power);
+                distance*=0.39701;
+                left.move(driveByDistanceCalculator(distance), power);
+                right.move(driveByDistanceCalculator(distance), power);
         }
 
     }
@@ -39,7 +40,8 @@ public class Drive {
         double radian; //Variable placeholder
 
         radian = degree * (Math.PI / 180); //Converts from degrees to radians
-        radian = Math.atan2(Math.sin(radian), Math.cos(radian)); //Finds the arctan of the sine of the radians measure and the cosine of the radians measure
+        //radian = Math.atan2(Math.sin(radian), Math.cos(radian)); //Finds the arctan of the sine
+        // of the radians measure and the cosine of the radians measure
 
         return radian; //Returns the radians measure to the caller
     }
