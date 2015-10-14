@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.UltrasonicSensor;
  * This Class is responsible for reading the Ultrasonic Sensor and Computing corrected distances
  * in centimeters and inches. The corrected values are returned in the "centimeters" and "inches"
  * fields.
- *
+ *Meow
  * Created by Prescott on 10/14/15.
  *
  */
