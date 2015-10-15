@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.UltrasonicSensor;
  * This OpMode is responsible for converting the ultrasonic value and displaying it on the Android
  * phones.
  * Created by Prescott on 10/7/15.
- * Meow
+ *
  */
 public class UltrasonicSensorOriginal extends OpMode {
     //Stores values from the Ultrasonic Sensor.
@@ -23,7 +23,7 @@ public class UltrasonicSensorOriginal extends OpMode {
         double ultrasonic = ultrasonicsensor.getUltrasonicLevel();
         //Corrects Ultrasonic Values into Centimeters.
         double ultracorrected = ultrasonic - 3;
-        //Correct the Ultrasonic Values into Inches.
+        //Converts the Centimeter values into Inches.
         double ultrainches = ultracorrected / 2.54;
 
         //Displays all the Data.
