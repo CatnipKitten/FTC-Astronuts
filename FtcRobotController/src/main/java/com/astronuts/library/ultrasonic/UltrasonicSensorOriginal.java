@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.UltrasonicSensor;
  * Created by Prescott on 10/7/15.
  * Meow
  */
-public class UltrasonicSensorTestOriginal extends OpMode {
+public class UltrasonicSensorOriginal extends OpMode {
     //Stores values from the Ultrasonic Sensor.
     UltrasonicSensor ultrasonicsensor;
 
