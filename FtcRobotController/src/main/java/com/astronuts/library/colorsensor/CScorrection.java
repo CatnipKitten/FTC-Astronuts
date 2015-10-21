@@ -1,4 +1,4 @@
-package com.qualcomm.ftcrobotcontroller.opmodes;
+package com.astronuts.library.colorsensor;
 
 import com.qualcomm.robotcore.hardware.ColorSensor;
 
