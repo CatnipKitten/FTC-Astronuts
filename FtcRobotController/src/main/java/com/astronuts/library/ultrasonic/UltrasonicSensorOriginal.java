@@ -4,10 +4,11 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 
 /**
- * This OpMode is responsible for converting the ultrasonic value and displaying it on the Android
+ * This OpMode is responsible for converting the ultrasonic values and displaying it on the Android
  * phones.
- * Created by Prescott on 10/7/15.
  *
+ * Created by Prescott on 10/7/15.
+ * Last Edited by Prescott on 10/21/15.
  */
 public class UltrasonicSensorOriginal extends OpMode {
     //Stores values from the Ultrasonic Sensor.
