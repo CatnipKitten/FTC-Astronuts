@@ -17,6 +17,7 @@ public class Drive {
                 right.move(driveByDistanceCalculator(distance*0.393701), power);
         }
 
+
     }
 
     public static void turnByAngle(int angle, EncoderMotor left, EncoderMotor right) {
@@ -28,11 +29,24 @@ public class Drive {
         right.move(turnByAngleCalculator(-angle), power);
     }
 
-    public void driveTo(double x, double y, String unit) {
-        driveTo(x, y, unit, 20);
+    public void driveTo(float finalX, float finalY, String unit, EncoderMotor left, EncoderMotor right) {
+        driveTo(finalX, finalY, unit, 0.2, left, right);
     }
 
-    public void driveTo(double x, double y, String unit, int power) {
+    public void driveTo(float finalX, float finalY, String unit, double power, EncoderMotor left, EncoderMotor right) {
+        float currentX = 0;
+        float currentY = 0;
+        float h;
+        float a;
+        float theta;
+
+        h = (float) Math.sqrt(Math.pow((finalY - currentY), 2) + Math.pow((finalX - currentX), 2));
+        a = finalX - currentX;
+        theta = (float) Math.acos(a/h);
+
+        turnByAngle((int) theta, power, left, right);
+        driveByDistance((int) h, 'i', left, right);
+
 
     }
     private static double radianConversion(double degree){
