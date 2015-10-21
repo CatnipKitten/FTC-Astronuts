@@ -8,7 +8,6 @@ import com.qualcomm.robotcore.hardware.UltrasonicSensor;
  * This OpMode is responsible for converting the ultrasonic value and displaying it on the Android
  * phones. It calls the method from the Ultrasonic Distance class to convert the data into
  * Centimeters and Inches.
- * test
  *
  * Created by Prescott on 10/7/15.
  * Last edited by Prescott on 10/21/15.
