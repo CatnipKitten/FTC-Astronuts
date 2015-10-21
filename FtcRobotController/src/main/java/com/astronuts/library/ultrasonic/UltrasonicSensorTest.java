@@ -23,6 +23,7 @@ public class UltrasonicSensorTest extends OpMode {
     public void init () {
         //Maps the Ultrasonic Sensor.
         ultrasonicsensor = hardwareMap.ultrasonicSensor.get("ultrasonic_sensor");
+
         //Creates the new instance of the Class.
         test = new UltrasonicDistance();
     }
