@@ -1,12 +1,8 @@
 package com.astronuts.library.encoder;
 
-import com.qualcomm.robotcore.hardware.DcMotor;
-
 import java.util.Hashtable;
 
 public class RobotData {
-
-    Hashtable<DcMotor, EncoderMotor> motorTable = new Hashtable<DcMotor, EncoderMotor>();
 
     public static double motorRPM = 152;
     public static double getMotorRPM() { return motorRPM; }
