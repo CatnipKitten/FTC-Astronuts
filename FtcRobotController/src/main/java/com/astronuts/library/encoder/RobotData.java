@@ -1,7 +1,5 @@
 package com.astronuts.library.encoder;
 
-import com.qualcomm.robotcore.hardware.DcMotor;
-
 import java.util.Hashtable;
 
 public class RobotData {

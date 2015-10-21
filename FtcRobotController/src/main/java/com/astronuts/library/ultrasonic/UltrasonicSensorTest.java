@@ -1,28 +1,35 @@
 package com.astronuts.library.ultrasonic;
 
+import com.astronuts.library.ultrasonic.UltrasonicDistance;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 
 /**
+ * This OpMode is responsible for converting the ultrasonic value and displaying it on the Android
+ * phones. It calls the method from the Ultrasonic Distance class to convert the data into
+ * Centimeters and Inches.
+ *
  * Created by Prescott on 10/7/15.
- * Meow
  */
 public class UltrasonicSensorTest extends OpMode {
-    //Makes variable for the Ultrasonic Sensor.
+    //Stores values from the Ultrasonic Sensor.
     UltrasonicSensor ultrasonicsensor;
+    //Creates a variable that makes a new instance of the Ultrasonic Distance Class.
+    UltrasonicDistance test;
 
     @Override
     public void init () {
         //Maps the Ultrasonic Sensor.
         ultrasonicsensor = hardwareMap.ultrasonicSensor.get("ultrasonic_sensor");
+        //Creates the new instance of the class.
+        test = new UltrasonicDistance();
     }
     public void loop () {
-        //Corrects the Raw data from the Ultrasonic Sensor.
-        double ultrasonic = ultrasonicsensor.getUltrasonicLevel();
-        double ultracorrected = ultrasonic - 3;
+        //Starts the Method from the class.
+        test.getcentimeters(ultrasonicsensor);
 
-        //Displays the Data.
-        telemetry.addData("4-ultrasonic_sensor", ultrasonic);
-        telemetry.addData("Ultrasonic Corrected", ultracorrected);
+        //Shows data from the sensor that has been converted through the method in the class.
+        telemetry.addData("Centimeters", test.centimeters);
+        telemetry.addData("Inches", test.inches);
     }
 }
