@@ -1,6 +1,5 @@
 package com.astronuts.library.colorsensor;
 
-import com.qualcomm.ftcrobotcontroller.opmodes.CScorrection;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
