@@ -11,7 +11,7 @@ import com.qualcomm.robotcore.hardware.UltrasonicSensor;
  *
  */
 public class UltrasonicDistance {
-    // Stores the corrected Distance in Centimeters.
+    //Stores the corrected Distance in Centimeters.
     public double centimeters;
     //Stores the corrected Distance in Inches.
     public double inches;
