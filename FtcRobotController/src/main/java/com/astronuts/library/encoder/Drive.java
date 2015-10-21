@@ -44,8 +44,12 @@ public class Drive {
         a = finalX - currentX;
         theta = (float) Math.acos(a/h);
 
+        theta = (float) degreeConversion(theta);
+        
         turnByAngle((int) theta, power, left, right);
         driveByDistance((int) h, 'i', left, right);
+
+
 
 
     }
@@ -54,6 +58,13 @@ public class Drive {
 
         radian = degree * (Math.PI / 180); //Converts from degrees to radians
         radian = Math.atan2(Math.sin(radian), Math.cos(radian)); //Finds the arctan of the sine of the radians measure and the cosine of the radians measure
+
+        return radian; //Returns the radians measure to the caller
+    }
+    private static double degreeConversion(double degree){
+        double radian; //Variable placeholder
+
+        radian = degree * (180/Math.PI); //Converts from degrees to radians
 
         return radian; //Returns the radians measure to the caller
     }
