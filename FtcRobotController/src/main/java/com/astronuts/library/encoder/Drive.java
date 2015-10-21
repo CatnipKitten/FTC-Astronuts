@@ -13,9 +13,11 @@ public class Drive {
                 left.move(driveByDistanceCalculator(distance), power);
                 right.move(driveByDistanceCalculator(distance), power);
             case'i':
-                left.move(driveByDistanceCalculator(distance*0.393701), power);
-                right.move(driveByDistanceCalculator(distance*0.393701), power);
+                distance*=0.39701;
+                left.move(driveByDistanceCalculator(distance), power);
+                right.move(driveByDistanceCalculator(distance), power);
         }
+
 
     }
 
@@ -28,18 +30,32 @@ public class Drive {
         right.move(turnByAngleCalculator(-angle), power);
     }
 
-    public void driveTo(double x, double y, String unit) {
-        driveTo(x, y, unit, 20);
+    public void driveTo(float finalX, float finalY, String unit, EncoderMotor left, EncoderMotor right) {
+        driveTo(finalX, finalY, unit, 0.2, left, right);
     }
 
-    public void driveTo(double x, double y, String unit, int power) {
+    public void driveTo(float finalX, float finalY, String unit, double power, EncoderMotor left, EncoderMotor right) {
+        float currentX = 0;
+        float currentY = 0;
+        float h;
+        float a;
+        float theta;
+
+        h = (float) Math.sqrt(Math.pow((finalY - currentY), 2) + Math.pow((finalX - currentX), 2));
+        a = finalX - currentX;
+        theta = (float) Math.acos(a/h);
+
+        turnByAngle((int) theta, power, left, right);
+        driveByDistance((int) h, 'i', left, right);
+
 
     }
     private static double radianConversion(double degree){
         double radian; //Variable placeholder
 
         radian = degree * (Math.PI / 180); //Converts from degrees to radians
-        radian = Math.atan2(Math.sin(radian), Math.cos(radian)); //Finds the arctan of the sine of the radians measure and the cosine of the radians measure
+        //radian = Math.atan2(Math.sin(radian), Math.cos(radian)); //Finds the arctan of the sine
+        // of the radians measure and the cosine of the radians measure
 
         return radian; //Returns the radians measure to the caller
     }
