@@ -8,17 +8,17 @@ import com.qualcomm.robotcore.hardware.UltrasonicSensor;
  * fields.
  *
  * Created by Prescott on 10/14/15.
- *
+ * Last edited by Prescott on 10/21/15.
  */
 public class UltrasonicDistance {
-    //Stores the corrected Distance in Centimeters.
+    //Makes a variable that will be able to store the value for centimeters.
     public double centimeters;
-    //Stores the corrected Distance in Inches.
+    //Makes a variable that will be able to store the value for inches.
     public double inches;
 
     //Creates Method for converting Ultrasonic Value to Centimeters and Inches.
     public void getcentimeters(UltrasonicSensor ultrasonicSensor) {
-        //Gets the raw value from the sensor
+        //Gets the raw value from the sensor.
         double raw = ultrasonicSensor.getUltrasonicLevel();
         //Converts raw data into Centimeters.
         centimeters = raw - 3;
