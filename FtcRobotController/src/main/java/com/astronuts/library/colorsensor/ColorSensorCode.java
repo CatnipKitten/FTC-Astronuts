@@ -12,9 +12,9 @@ import com.qualcomm.robotcore.hardware.DigitalChannelController;
  * Created by Baylee on 10/7/2015.
  * Last edited on 10/21/15
  */
-public class ColorSensorTest extends OpMode {
+public class ColorSensorCode extends OpMode {
     //Makes a variable that stores the values from the color sensor.
-    ColorSensor colorSensor;
+    com.qualcomm.robotcore.hardware.ColorSensor colorSensor;
 
     //Dont know yet. Will ask Eric.
     DeviceInterfaceModule cdim;
