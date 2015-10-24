@@ -11,4 +11,7 @@ public class servo {
          currentPos+=delta;
          servoHardware.setPosition(currentPos);
      }
+    public static void moveServo(Servo servoHardware, double desiredPos){
+        servoHardware.setPosition(desiredPos);
+    }
 }

@@ -1,5 +1,6 @@
 package com.astronuts.library.opmodes;
 
+import com.astronuts.library.servo.servo;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -47,7 +48,35 @@ public class teleop extends OpMode{
         motorLeft.setPower(leftStick);
         motorRight.setPower(rightStick);
 
+        servoCode();
+
         telemetry.addData("Left Stick: ", leftStick);
         telemetry.addData("Right Stick: ", rightStick);
+    }
+    private void servoCode(){
+        if(gamepad1.a){
+            servo.moveServo(servoArm, -delta, armPos);
+        }
+        if(gamepad1.y){
+            servo.moveServo(servoArm, delta, armPos);
+        }
+        if(gamepad1.x){
+            servo.moveServo(servoClaw, -delta, clawPos);
+        }
+        if(gamepad1.b){
+            servo.moveServo(servoClaw, delta, clawPos);
+        }
+        if(gamepad1.dpad_left){
+            servo.moveServo(servoLeft, -delta, leftPos);
+        }
+        if(gamepad1.dpad_right){
+            servo.moveServo(servoLeft, delta, leftPos);
+        }
+        if(gamepad1.dpad_up){
+            servo.moveServo(servoRight, -delta, rightPos);
+        }
+        if(gamepad1.dpad_down){
+            servo.moveServo(servoRight, delta, rightPos);
+        }
     }
 }
