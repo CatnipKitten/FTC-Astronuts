@@ -33,6 +33,26 @@
       android:textSize="16sp"
       android:textStyle="bold"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Color"
+        android:id="@+id/togglecolorid"
+        android:onClick="toggleColor"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/textDeviceName"
+        android:layout_toEndOf="@+id/textDeviceName"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Position"
+        android:id="@+id/togglepositionid"
+        android:onClick="togglePos"
+        android:layout_alignTop="@+id/togglecolorid"
+        android:layout_toLeftOf="@+id/menu_buttons"
+        android:layout_toStartOf="@+id/menu_buttons"/>
+
     <ImageButton
       android:id="@+id/menu_buttons"
       android:contentDescription="menu_buttons"

@@ -8,7 +8,7 @@
 package com.astronuts.library.chudsCode;
 
 //Main class
-class Exceptions extends Exception{
+public class Exceptions extends Exception{
 
     //Empty call
     public Exceptions(){

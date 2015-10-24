@@ -1,4 +1,3 @@
-
 /**
  * EncoderMotor class: making your encoders manageable.
  * Author: Marcus Eliason (Choooooooooooooooooooooooooooooooooooooooooooooooood)
@@ -7,24 +6,23 @@
 
 package com.astronuts.library.encoder;
 
-//Imports.
+//Imports
+import com.astronuts.library.chudsCode.Exceptions;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorController;
 
-//Main class.
+//Main class
 public class EncoderMotor {
 
 
 
-    /*
-    Class variables.
-     */
+    /**Class variables*/
 
     //This stores the motor instance.
     private DcMotor motorMain;
 
     //Stores the case value.
-    private int Case;
+    private short Case;
 
     //Stores the current target value.
     private int motorTarget;
@@ -40,11 +38,9 @@ public class EncoderMotor {
 
 
 
-    /*
-    Main methods.
-     */
+    /**Main methods*/
 
-    //Constructor.
+    //Constructor
     public EncoderMotor(DcMotor motorMain){
 
         this.motorMain = motorMain;
@@ -57,14 +53,14 @@ public class EncoderMotor {
 
     }
 
-    //Sets the run mode of the motor.
+    //Set runMode method
     public void runMode(DcMotorController.RunMode Mode){
 
         this.motorMain.setChannelMode(Mode);
 
     }
 
-    //Tests to see if the motor has been set to the specified mode.
+    //Test runMode method
     public boolean cnf(DcMotorController.RunMode Mode){
 
         boolean Cmp;
@@ -85,8 +81,8 @@ public class EncoderMotor {
 
     }
 
-    //Moves the motors to the desired target with the selected power.
-    public void move(int Target, double Power){
+    //Motor movement method
+    public void move(int Target, double Power) throws Exceptions {
 
         switch(Case){
 
@@ -193,13 +189,13 @@ public class EncoderMotor {
             //In case (Haha) the case value was set out of bounds
             default:
 
-                throw new IndexOutOfBoundsException("Invalid case identifier: " + this.Case);
+                throw new Exceptions("Invalid case identifier: " + this.Case);
 
         }
 
     }
 
-    //Move the motors with only a power value. (Encoders will still record their current position.)
+    //Manual motor movement method (Encoders will still record their current position.)
     public void moveManual(double Power){
 
         this.Case = 2; //Set to 2, as the run to position mode will need to be set again in the main move method.
@@ -218,7 +214,7 @@ public class EncoderMotor {
 
     }
 
-    //Debug info.
+    //Debug info
     public String[] debugInfo(){
 
         String[] debug = new String[5];
@@ -235,22 +231,18 @@ public class EncoderMotor {
 
 
 
-    /*
-     WARNING: The use of these methods strongly discouraged.
-     They are untested, as well as poor coding practice.
-     Use at your own risk!
-     */
+    /**Depreciated Methods*/
 
     @Deprecated
-    //Changes the current case value from the calling program.
-    public void overrideCase(int Case){
+    //Changes the current case value from the calling program
+    public void overrideCase(short Case){
 
         this.Case = Case;
 
     }
 
     @Deprecated
-    //Changes the target value, even if the current target has not been met.
+    //Changes the target value, even if the current target has not been met
     public void overrideTarget(int Target){
 
         this.motorTarget = Target;
@@ -258,7 +250,7 @@ public class EncoderMotor {
     }
 
     @Deprecated
-    //Changes the motor called by the encoder program.
+    //Changes the motor called by the encoder program
     public void overrideMotor(DcMotor motorMain){
 
         this.motorMain = motorMain;
@@ -266,7 +258,7 @@ public class EncoderMotor {
     }
 
     @Deprecated
-    //Changes the motor direction. (Somewhat redundant.)
+    //Changes the motor direction (Somewhat redundant)
     public void overrideDirection(DcMotor.Direction Direction){
 
         this.motorMain.setDirection(Direction);
@@ -274,7 +266,7 @@ public class EncoderMotor {
     }
 
     @Deprecated
-    //Overrides motorPrime. (NEVER USE! REDUNDANT & DANGEROUS!)
+    //Overrides motorPrime (NEVER USE! REDUNDANT & DANGEROUS!)
     public void overridePrime(int Prime){
 
         this.motorPrime = Prime;
