@@ -1,8 +1,7 @@
 package com.astronuts.library.opmodes;
 
-import com.astronuts.library.colorsensor.CScorrection;
-import com.astronuts.library.ultrasonic.Ultra_Sonic_Sensor_Reference;
-import com.astronuts.library.ultrasonic.UltrasonicDistance;
+import com.astronuts.library.sensors.colorsensor.CScorrection;
+import com.astronuts.library.sensors.ultrasonic.UltrasonicDistance;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -66,6 +65,4 @@ public class K9LinearOp extends LinearOpMode {
             waitForNextHardwareCycle();
         }
     }
-
-
 }
