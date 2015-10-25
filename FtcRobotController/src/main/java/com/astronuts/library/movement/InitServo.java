@@ -5,12 +5,12 @@ import com.qualcomm.robotcore.robocol.Telemetry;
 import com.qualcomm.robotcore.util.Range;
 
 public class InitServo{
-    private Servo servo;
-    private double servoMinimum;
-    private double servoMaximum;
-    private double delta;
-    private double currentPosition;
-    private char sign;
+    private Servo servo; //Holds the variable for the servo
+    private double servoMinimum; //Holds the variable for the minimum range
+    private double servoMaximum; //Holds the variable for the maximum range
+    private double delta; //Incrementing
+    private double currentPosition; //Holds the variable for the current position
+    private char sign; //
     Telemetry telemetry = new Telemetry();
 
     public InitServo(Servo servo, double servoMinimum, double servoMaximum, double delta)
