@@ -1,4 +1,4 @@
-package com.astronuts.library.encoder;
+package com.astronuts.library;
 
 import java.util.Hashtable;
 
@@ -20,6 +20,9 @@ public class RobotData {
     public static double forwardVelocity;
     public static double getForwardVelocity() { return forwardVelocity; }
     protected static void setForwardVelocity() { forwardVelocity = (getWheelRadius() / 2) * (getAngularVelocity() * 2); }
+
+    public static String teamColor = "Red"; //Default value
+    public static String teamPosition = "Right"; //Default value
 
     /*public void motorInit(DcMotor motorName, EncoderMotor encoderName, String motorNameString) {
         HardwareMap hardwareMap = new HardwareMap();

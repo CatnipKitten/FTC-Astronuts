@@ -4,7 +4,7 @@
  * Created 10/2/15
  */
 
-package com.astronuts.library.encoder;
+package com.astronuts.library.movement;
 
 //Imports
 import com.astronuts.library.chudsCode.Exceptions;

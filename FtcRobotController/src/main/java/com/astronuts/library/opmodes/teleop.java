@@ -1,6 +1,5 @@
-package com.astronuts.library.opmodes;
+/*package com.astronuts.library.opmodes;
 
-import com.astronuts.library.init.servo;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -88,4 +87,4 @@ public class teleop extends OpMode{
             servo.moveServo(servoRight, 'r', delta, rightPos, rightMin, rightMax);
         }
     }
-}
+}*/

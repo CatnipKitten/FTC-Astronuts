@@ -1,6 +1,5 @@
-package com.astronuts.library.colorsensor;
+package com.astronuts.library.sensors.colorsensor;
 
-import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
 import com.qualcomm.robotcore.hardware.DigitalChannelController;

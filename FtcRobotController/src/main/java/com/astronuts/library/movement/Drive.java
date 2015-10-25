@@ -1,4 +1,4 @@
-package com.astronuts.library.encoder;
+package com.astronuts.library.movement;
 
 import com.astronuts.library.chudsCode.Exceptions;
 

@@ -54,6 +54,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.astronuts.library.RobotData;
 import com.qualcomm.ftccommon.DbgLog;
 import com.qualcomm.ftccommon.FtcEventLoop;
 import com.qualcomm.ftccommon.FtcRobotControllerService;
@@ -178,7 +179,45 @@ public class FtcRobotControllerActivity extends Activity {
     if (USE_DEVICE_EMULATION) { ModernRoboticsHardwareFactory.enableDeviceEmulation(); }
 
     //Custom code section
-    final Button toggleTeam = (Button) findViewById()
+    final Button toggleTeam = (Button) findViewById(R.id.toggleteamid);
+    toggleTeam.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        if(RobotData.teamColor == "Red"){
+          RobotData.teamColor = "Blue";
+        }
+        if(RobotData.teamColor == "Blue"){
+          RobotData.teamColor = "Red";
+        }
+
+        Context context = getApplicationContext();
+        CharSequence text = RobotData.teamColor;
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+      }
+    });
+
+    final Button togglePos = (Button) findViewById(R.id.togglepositionid);
+    togglePos.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        if(RobotData.teamPosition == "Right"){
+          RobotData.teamPosition = "Left";
+        }
+        if(RobotData.teamPosition == "Left"){
+          RobotData.teamPosition = "Right";
+        }
+
+        Context context = getApplicationContext();
+        CharSequence text = RobotData.teamPosition;
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+      }
+    });
   }
 
   @Override
