@@ -2,6 +2,7 @@ package com.astronuts.library.opmodes;
 
 import com.astronuts.library.sensors.colorsensor.CScorrection;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
 import com.qualcomm.robotcore.hardware.DigitalChannelController;
 
@@ -15,7 +16,7 @@ import com.qualcomm.robotcore.hardware.DigitalChannelController;
 
 public class ColorSensorCode extends OpMode {
     //Makes a variable that stores the values from the color sensor.
-    com.qualcomm.robotcore.hardware.ColorSensor colorSensor;
+    ColorSensor colorSensor;
 
     //Dont know yet. Will ask Eric.
     DeviceInterfaceModule cdim;
