@@ -15,12 +15,10 @@ import com.qualcomm.robotcore.hardware.UltrasonicSensor;
  * Last Edited by Prescott on 10/28/15.
  */
 public class ColorSensorTestScenario {
+    //This is a note that will have stuff in it in the future :D
     LightSensor lightSensor;
-
     UltrasonicSensor ultrasonic;
-
     ColorSensor color;
-
     DeviceInterfaceModule cdim;
 
 }
