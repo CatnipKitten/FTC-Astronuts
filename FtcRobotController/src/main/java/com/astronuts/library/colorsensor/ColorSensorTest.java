@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.DigitalChannelController;
  * through the Method that will correct the raw Red, Green, and Blue data.
  *
  * Created by Baylee on 10/7/2015.
- * Last edited on 10/21/15
+ * Last edited by Baylee on 10/21/15
  */
 public class ColorSensorTest extends OpMode {
     //Makes a variable that stores the values from the color sensor.
