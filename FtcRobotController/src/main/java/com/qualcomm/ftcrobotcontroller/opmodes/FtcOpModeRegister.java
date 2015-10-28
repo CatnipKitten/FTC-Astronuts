@@ -33,20 +33,20 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
-import com.astronuts.library.encoder.test;
+import com.astronuts.library.opmodes.*;
 
 /**
  * Register Op Modes
  */
 public class FtcOpModeRegister implements OpModeRegister {
 
-  /**
-   * The Op Mode Manager will call this method when it wants a list of all
-   * available op modes. Add your op mode to the list to enable it.
-   *
-   * @param manager op mode manager
-   */
-  public void register(OpModeManager manager) {
+    /**
+     * The Op Mode Manager will call this method when it wants a list of all
+     * available op modes. Add your op mode to the list to enable it.
+     *
+     * @param manager op mode manager
+     */
+    public void register(OpModeManager manager) {
 
     /*
      * register your op modes here.
@@ -95,7 +95,7 @@ public class FtcOpModeRegister implements OpModeRegister {
     //manager.register("PushBotIrSeek", PushBotIrSeek.class);
     //manager.register("PushBotSquare", PushBotSquare.class);
     */
-    
-    manager.register("Test", test.class);
-  }
+        manager.register("TeleOP", basicteleop.class);
+        manager.register("K9LinearOp", K9LinearOp.class);
+    }
 }
