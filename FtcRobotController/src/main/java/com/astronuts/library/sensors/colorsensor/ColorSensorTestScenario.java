@@ -1,4 +1,4 @@
-package com.astronuts.library.colorsensor;
+package com.astronuts.library.sensors.colorsensor;
 
 import com.qualcomm.robotcore.hardware.LightSensor;
 import com.qualcomm.robotcore.hardware.ColorSensor;
