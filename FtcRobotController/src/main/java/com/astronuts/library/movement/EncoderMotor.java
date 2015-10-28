@@ -14,7 +14,7 @@ import com.qualcomm.robotcore.hardware.DcMotorController;
 //Main class
 public class EncoderMotor {
 
-
+    public static String LOG_TAG = "EncoderMotor";
 
     /**Class variables*/
 
