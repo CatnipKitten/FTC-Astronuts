@@ -1,4 +1,4 @@
-package com.astronuts.library.ultrasonic;
+package com.astronuts.library.sensors.ultrasonic;
 
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 
@@ -20,8 +20,11 @@ public class UltrasonicDistance {
     public void getcentimeters(UltrasonicSensor ultrasonicSensor) {
         //Gets the raw value from the sensor.
         double raw = ultrasonicSensor.getUltrasonicLevel();
+        double currentValue = raw;
+        double previousValue =
         //Converts raw data into Centimeters.
         centimeters = raw - 3;
+
         //Converts raw data into Inches.
         inches = centimeters / 2.54;
     }

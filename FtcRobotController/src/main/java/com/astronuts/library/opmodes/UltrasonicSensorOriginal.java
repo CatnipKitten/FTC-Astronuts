@@ -1,4 +1,4 @@
-package com.astronuts.library.ultrasonic;
+package com.astronuts.library.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;

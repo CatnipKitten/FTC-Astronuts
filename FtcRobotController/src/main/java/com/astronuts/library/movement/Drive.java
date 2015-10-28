@@ -1,13 +1,15 @@
-package com.astronuts.library.encoder;
+package com.astronuts.library.movement;
+
+import com.astronuts.library.chudsCode.Exceptions;
 
 public class Drive {
     public static void driveByDistance(double distance, char unit, EncoderMotor left, EncoderMotor
-            right) {
+            right) throws Exceptions{
         driveByDistance(distance, unit, 0.2, left, right);
     }
 
     public static void driveByDistance(double distance, char unit, double power, EncoderMotor left,
-                                 EncoderMotor right) {
+                                 EncoderMotor right) throws Exceptions {
         switch(unit){
             case'c':
                 left.move(driveByDistanceCalculator(distance), power);
@@ -21,20 +23,23 @@ public class Drive {
 
     }
 
-    public static void turnByAngle(int angle, EncoderMotor left, EncoderMotor right) {
+    public static void turnByAngle(int angle, EncoderMotor left, EncoderMotor right) throws Exceptions {
         turnByAngle(angle, 0.2, left, right);
     }
 
-    public static void turnByAngle(int angle, double power, EncoderMotor left, EncoderMotor right) {
+    public static void turnByAngle(int angle, double power, EncoderMotor left, EncoderMotor
+            right) throws Exceptions{
         left.move(turnByAngleCalculator(angle), power);
         right.move(turnByAngleCalculator(-angle), power);
     }
 
-    public void driveTo(float finalX, float finalY, String unit, EncoderMotor left, EncoderMotor right) {
+    public void driveTo(float finalX, float finalY, String unit, EncoderMotor left, EncoderMotor
+            right) throws Exceptions{
         driveTo(finalX, finalY, unit, 0.2, left, right);
     }
 
-    public void driveTo(float finalX, float finalY, String unit, double power, EncoderMotor left, EncoderMotor right) {
+    public void driveTo(float finalX, float finalY, String unit, double power, EncoderMotor left,
+                        EncoderMotor right) throws Exceptions{
         float currentX = 0;
         float currentY = 0;
         float h;

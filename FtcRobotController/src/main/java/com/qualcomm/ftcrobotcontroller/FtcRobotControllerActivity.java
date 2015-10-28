@@ -48,11 +48,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.astronuts.library.RobotData;
 import com.qualcomm.ftccommon.DbgLog;
 import com.qualcomm.ftccommon.FtcEventLoop;
 import com.qualcomm.ftccommon.FtcRobotControllerService;
@@ -151,7 +153,7 @@ public class FtcRobotControllerActivity extends Activity {
       }
     });
 
-    textDeviceName = (TextView) findViewById(R.id.textDeviceName);
+    //textDeviceName = (TextView) findViewById(R.id.textDeviceName);
     textWifiDirectStatus = (TextView) findViewById(R.id.textWifiDirectStatus);
     textRobotStatus = (TextView) findViewById(R.id.textRobotStatus);
     textOpMode = (TextView) findViewById(R.id.textOpMode);
@@ -175,6 +177,107 @@ public class FtcRobotControllerActivity extends Activity {
     hittingMenuButtonBrightensScreen();
 
     if (USE_DEVICE_EMULATION) { ModernRoboticsHardwareFactory.enableDeviceEmulation(); }
+
+    //Custom code section
+    final Button toggleTeam = (Button) findViewById(R.id.toggleteamid);
+    toggleTeam.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        if(RobotData.teamColor == 1){
+          RobotData.teamColor = 0;
+
+          Context context = getApplicationContext();
+          CharSequence text = RobotData.blueTeam;
+          int duration = Toast.LENGTH_SHORT;
+          Toast toast = Toast.makeText(context, text, duration);
+          toast.show();
+        }
+
+        else if(RobotData.teamColor == 0){
+          RobotData.teamColor = 1;
+
+          Context context = getApplicationContext();
+          CharSequence text = RobotData.redTeam;
+          int duration = Toast.LENGTH_SHORT;
+
+          Toast toast = Toast.makeText(context, text, duration);
+          toast.show();
+        }
+      }
+    });
+
+    final Button togglePos = (Button) findViewById(R.id.togglepositionid);
+    togglePos.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        if(RobotData.teamPosition == 1){
+          RobotData.teamPosition = 0;
+
+          Context context = getApplicationContext();
+          CharSequence text = RobotData.rightPos;
+          int duration = Toast.LENGTH_SHORT;
+
+          Toast toast = Toast.makeText(context, text, duration);
+          toast.show();
+        }
+        else if (RobotData.teamPosition == 0){
+          RobotData.teamPosition = 1;
+          Context context = getApplicationContext();
+          CharSequence text = RobotData.leftPos;
+          int duration = Toast.LENGTH_SHORT;
+
+          Toast toast = Toast.makeText(context, text, duration);
+          toast.show();
+        }
+      }
+    });
+
+    final Button time = (Button) findViewById(R.id.delay);
+    time.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        if(RobotData.timeDelay == 0){
+          RobotData.timeDelay = 5;
+
+          Context context = getApplicationContext();
+          CharSequence text = RobotData.timeDelay5;
+          int duration = Toast.LENGTH_SHORT;
+
+          Toast toast = Toast.makeText(context, text, duration);
+          toast.show();
+        }
+        else if(RobotData.timeDelay == 5){
+          RobotData.timeDelay = 10;
+
+          Context context = getApplicationContext();
+          CharSequence text = RobotData.timeDelay10;
+          int duration = Toast.LENGTH_SHORT;
+
+          Toast toast = Toast.makeText(context, text, duration);
+          toast.show();
+        }
+        else if(RobotData.timeDelay == 10){
+          RobotData.timeDelay = 15;
+
+          Context context = getApplicationContext();
+          CharSequence text = RobotData.timeDelay15;
+          int duration = Toast.LENGTH_SHORT;
+
+          Toast toast = Toast.makeText(context, text, duration);
+          toast.show();
+        }
+        else if(RobotData.timeDelay == 15){
+          RobotData.timeDelay = 0;
+
+          Context context = getApplicationContext();
+          CharSequence text = RobotData.timeDelay0;
+          int duration = Toast.LENGTH_SHORT;
+
+          Toast toast = Toast.makeText(context, text, duration);
+          toast.show();
+        }
+      }
+    });
   }
 
   @Override
