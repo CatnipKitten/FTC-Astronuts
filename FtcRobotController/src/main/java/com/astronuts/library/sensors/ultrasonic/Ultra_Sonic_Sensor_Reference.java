@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 //import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 //import com.qualcomm.robotcore.hardware.DcMotor;
-//import com.qualcomm.robotcore.hardware.LightSensor;
+//import com.qualcomm.robotcore.hardware.LightSensorValueFinder;
 //import com.qualcomm.robotcore.hardware.TouchSensor;
 //import com.qualcomm.robotcore.util.ElapsedTime;
 //import com.qualcomm.robotcore.hardware.Servo;
