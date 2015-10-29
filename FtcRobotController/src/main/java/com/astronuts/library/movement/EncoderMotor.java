@@ -10,6 +10,10 @@ package com.astronuts.library.movement;
 import com.astronuts.library.chudsCode.Exceptions;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorController;
+import com.qualcomm.robotcore.hardware.HardwareDevice;
+import com.qualcomm.robotcore.util.Hardware;
+
+import static com.astronuts.library.chudsCode.SafeSnooze.snooze;
 
 //Main class
 public class EncoderMotor {
@@ -36,7 +40,7 @@ public class EncoderMotor {
     //This is a flag for the use of the calling program.
     public boolean isDone;
 
-
+    public boolean LinearOp;
 
     /**Main methods*/
 
@@ -48,6 +52,7 @@ public class EncoderMotor {
         this.motorTarget = 0;
         this.accuracy = 5;
         this.isDone = false;
+        this.LinearOp = false;
 
         runMode(DcMotorController.RunMode.RESET_ENCODERS);
 
@@ -82,9 +87,9 @@ public class EncoderMotor {
     }
 
     //Motor movement method
-    public void move(int Target, double Power) throws Exceptions {
+    public void move(int Target, double Power){
 
-        switch(Case){
+        switch(Case) {
 
             //CASE 0: Resets the encoders.
             case 0:
@@ -98,7 +103,7 @@ public class EncoderMotor {
             //CASE 1: Confirms that the encoders have been reset.
             case 1:
 
-                if(cnf(DcMotorController.RunMode.RESET_ENCODERS)){
+                if (cnf(DcMotorController.RunMode.RESET_ENCODERS)) {
 
                     this.Case = 2;
 
@@ -118,7 +123,7 @@ public class EncoderMotor {
             //CASE 3: Confirms that the motor has been set to the appropriate mode.
             case 3:
 
-                if(cnf(DcMotorController.RunMode.RUN_TO_POSITION)){
+                if (cnf(DcMotorController.RunMode.RUN_TO_POSITION)) {
 
                     this.Case = 4;
 
@@ -140,15 +145,13 @@ public class EncoderMotor {
             //CASE 5: Tests to see if the current position is within 5 of the target position. If true, the motor power will be set to zero, and the case will be set to 4 so a new target can be set. If false, the case will be set to 6, so the motor can move to the current target.
             case 5:
 
-                if(Math.abs(this.motorMain.getCurrentPosition()-this.motorTarget)<=this.accuracy){
+                if (Math.abs(this.motorMain.getCurrentPosition() - this.motorTarget) <= this.accuracy) {
 
                     this.motorMain.setPower(0);
                     this.Case = 4;
                     this.isDone = true; //Set to true, as a new value can now be assigned.
 
-                }
-
-                else{
+                } else {
 
                     this.Case = 6;
                     this.isDone = false; //The target has not been met, so flag is set to false.
@@ -160,14 +163,12 @@ public class EncoderMotor {
             //CASE 6: this is in charge of incrementing the motor
             case 6:
 
-                if(!(this.motorMain.getCurrentPosition() - this.motorTarget < 100)){
+                if (!(this.motorMain.getCurrentPosition() - this.motorTarget < 100)) {
 
-                    this.motorPrime = this.motorTarget/30 + this.motorPrime;
+                    this.motorPrime = this.motorTarget / 30 + this.motorPrime;
 
 
-                }
-
-                else{
+                } else {
 
                     this.motorPrime = this.motorTarget;
 
@@ -186,10 +187,11 @@ public class EncoderMotor {
 
                 break;
 
-            //In case (Haha) the case value was set out of bounds
-            default:
+        }
 
-                throw new Exceptions("Invalid case identifier: " + this.Case);
+        if(LinearOp){
+
+            snooze(30, 'm');
 
         }
 
