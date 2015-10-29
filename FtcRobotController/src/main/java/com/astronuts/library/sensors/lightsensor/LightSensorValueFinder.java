@@ -1,10 +1,7 @@
 package com.astronuts.library.sensors.lightsensor;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.LightSensor;
-import com.qualcomm.hardware.*;
-import com.qualcomm.ftcrobotcontroller.*;
 
 /**
  * Created by prescott on 10/28/15.

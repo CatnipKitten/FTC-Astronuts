@@ -1,15 +1,13 @@
 package com.astronuts.library.movement;
 
-import com.astronuts.library.chudsCode.Exceptions;
-
 public class Drive {
     public static void driveByDistance(double distance, char unit, EncoderMotor left, EncoderMotor
-            right) throws Exceptions{
+            right) {
         driveByDistance(distance, unit, 0.2, left, right);
     }
 
     public static void driveByDistance(double distance, char unit, double power, EncoderMotor left,
-                                 EncoderMotor right) throws Exceptions {
+                                 EncoderMotor right) {
         switch(unit){
             case'c':
                 left.move(driveByDistanceCalculator(distance), power);
@@ -23,28 +21,29 @@ public class Drive {
 
     }
 
-    public static void turnByAngle(int angle, EncoderMotor left, EncoderMotor right) throws Exceptions {
+    public static void turnByAngle(int angle, EncoderMotor left, EncoderMotor right) {
         turnByAngle(angle, 0.2, left, right);
     }
 
     public static void turnByAngle(int angle, double power, EncoderMotor left, EncoderMotor
-            right) throws Exceptions{
+            right) {
         left.move(turnByAngleCalculator(angle), power);
         right.move(turnByAngleCalculator(-angle), power);
     }
 
-    public void driveTo(float finalX, float finalY, String unit, EncoderMotor left, EncoderMotor
-            right) throws Exceptions{
+    public static void driveTo(float finalX, float finalY, String unit, EncoderMotor left,
+                             EncoderMotor right) {
         driveTo(finalX, finalY, unit, 0.2, left, right);
     }
 
-    public void driveTo(float finalX, float finalY, String unit, double power, EncoderMotor left,
-                        EncoderMotor right) throws Exceptions{
+    public static void driveTo(float finalX, float finalY, String unit, double power, EncoderMotor
+            left,
+                        EncoderMotor right){
         float currentX = 0;
         float currentY = 0;
         float h;
         float a;
-        float theta;
+        float theta = 0;
 
         h = (float) Math.sqrt(Math.pow((finalY - currentY), 2) + Math.pow((finalX - currentX), 2));
         a = finalX - currentX;

@@ -1,13 +1,11 @@
 package com.astronuts.library.sensors.colorsensor;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
 import com.qualcomm.robotcore.hardware.DigitalChannelController;
 import com.qualcomm.robotcore.hardware.LightSensor;
-import com.qualcomm.robotcore.hardware.ColorSensor;
-import com.qualcomm.robotcore.*;
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 
 /**
@@ -33,7 +31,7 @@ public class ColorSensorTestScenario extends LinearOpMode {
         ultrasonic = hardwareMap.ultrasonicSensor.get("ultrasonic_sensor");
         lightSensor = hardwareMap.lightSensor.get("light_sensor");
         color = hardwareMap.colorSensor.get("color_sensor");
-        cdim = hardwareMap.colorSensor.get("dim");
+        //cdim = hardwareMap.colorSensor.get("dim");
 
         motorRight = hardwareMap.dcMotor.get("motor_right");
         motorLeft = hardwareMap.dcMotor.get("motor_left");
@@ -43,8 +41,5 @@ public class ColorSensorTestScenario extends LinearOpMode {
         cdim.setDigitalChannelState(LED_CHANNEL, false);
 
         waitForStart();
-
-        if (lightSensor )
-
     }
 }

@@ -7,11 +7,9 @@
 package com.astronuts.library.movement;
 
 //Imports
-import com.astronuts.library.chudsCode.Exceptions;
+
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorController;
-import com.qualcomm.robotcore.hardware.HardwareDevice;
-import com.qualcomm.robotcore.util.Hardware;
 
 import static com.astronuts.library.chudsCode.SafeSnooze.snooze;
 

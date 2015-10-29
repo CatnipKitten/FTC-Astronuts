@@ -1,14 +1,10 @@
 package com.astronuts.library.chudsCode;
 
-import com.qualcomm.robotcore.exception.RobotCoreException;
-import com.qualcomm.robotcore.hardware.HardwareMap;
 import android.util.Log;
 
-import java.nio.ByteBuffer;
+import com.qualcomm.robotcore.exception.RobotCoreException;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 
-/**
- * Created by Chooooooooood on 10/24/2015.
- */
 public class adafruitIMU {
 
     private static volatile double[] rollAngle = new double[2], pitchAngle = new double[2], yawAngle = new double[2];
@@ -73,7 +69,7 @@ public class adafruitIMU {
 
             default:
 
-                Log.i("AdafruitImu","Invalid ID");
+                Log.i("AdafruitImu", "Invalid ID");
                 Value = Double.parseDouble(null);
 
                 break;
