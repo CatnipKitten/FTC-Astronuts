@@ -12,7 +12,7 @@ import android.util.Log;
 public class SafeSnooze {
 
     //sleep method
-    public static void snooze(long num, char unit) throws Exceptions {
+    public static void snooze(long num, char unit) {
 
         switch(unit){
             case 'm':
@@ -38,10 +38,6 @@ public class SafeSnooze {
                 num = num * 1000;
 
                 break;
-
-            default:
-
-                throw new Exceptions("Illegal unit type: " + unit);
 
         }
 

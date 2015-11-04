@@ -1,8 +1,8 @@
 package com.astronuts.library.opmodes;
 
 import com.astronuts.library.RobotData;
-import com.astronuts.library.chudsCode.Exceptions;
 import com.astronuts.library.chudsCode.SafeSnooze;
+import com.astronuts.library.movement.Drive;
 import com.astronuts.library.movement.EncoderMotor;
 import com.astronuts.library.movement.InitEncoder;
 import com.astronuts.library.movement.InitServo;
@@ -37,12 +37,11 @@ public class basiclinearop extends LinearOpMode {
         servoRight.init();
 
         waitForStart(); //Waits for the start button to be pressed
-        try {SafeSnooze.snooze(RobotData.timeDelay, 's');} //If the user defined a delay through the buttons, this will cause the robot to wait.
-        catch (Exceptions e){}
+        SafeSnooze.snooze(RobotData.timeDelay, 's'); //If the user defined a delay through the buttons, this will cause the robot to wait.
 
-        try {encoder.move(12, 'i');} //Chud needs to catch his exceptions :(
-        catch (Exceptions e){}
         encoder.moveManual(); //Moves the robot with the aforementioned power level.
         encoder.moveManual(0.2); //Moves with a custom power level.
+
+        Drive.driveTo(5, 5, "c", left, right);
     }
 }

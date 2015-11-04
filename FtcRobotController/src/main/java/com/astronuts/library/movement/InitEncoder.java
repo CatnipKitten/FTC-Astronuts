@@ -1,7 +1,5 @@
 package com.astronuts.library.movement;
 
-import com.astronuts.library.chudsCode.Exceptions;
-
 public class InitEncoder {
     private EncoderMotor encoderMotorLeft; //Variable holder for the encoder motor
     private EncoderMotor encoderMotorRight;
@@ -15,7 +13,7 @@ public class InitEncoder {
     }
 
     //Move function
-    public void move(double distance, char unit) throws Exceptions{
+    public void move(double distance, char unit) {
         Drive.driveByDistance(distance, unit, power, encoderMotorLeft, encoderMotorRight);
     }
 
