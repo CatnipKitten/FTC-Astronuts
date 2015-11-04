@@ -11,13 +11,15 @@ import com.qualcomm.robotcore.*;
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 
 /**
- *
+ * This is an autonomous program that makes the robot follow a white line that leads up to the red
+ * and blue lights, finds out which color one side is, then uses logic to find the team's color,
+ * and pushes one of the buttons based off of the team color.
  *
  * Created by Prescott on 10/28/15.
  * Last Edited by Prescott on 10/28/15.
  */
 public class ColorSensorTestScenario extends LinearOpMode {
-    //This is a note that will have stuff in it in the future :D
+    //Creates a variable for
     DcMotor motorRight;
     DcMotor motorLeft;
 
