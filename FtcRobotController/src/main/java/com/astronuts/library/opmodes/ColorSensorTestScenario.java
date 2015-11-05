@@ -83,7 +83,7 @@ public class ColorSensorTestScenario extends LinearOpMode {
         waitForStart(); //Starts the actual program.
         SafeSnooze.snooze(RobotData.timeDelay, 's');
 
-        while(UltrasonicSensor ultrasonicDistance.getdistance('c')) {
+        while(ultrasonicDistance.getdistance('c')) {
             if (lightSensor < (light value of white tape)) {
 
             }
