@@ -1,4 +1,4 @@
-package com.astronuts.library.sensors.colorsensor;
+package com.astronuts.library.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
@@ -50,7 +50,7 @@ public class ColorSensorTestScenario extends LinearOpMode {
 
         waitForStart();
 
-        if (lightSensor < (some number)) {
+        if (lightSensor < (light value of white tape)) {
 
         }
 
