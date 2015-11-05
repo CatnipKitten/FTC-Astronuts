@@ -46,7 +46,9 @@ public class ColorSensorTestScenario extends LinearOpMode {
 
         waitForStart();
 
+        if (lightSensor < (some number)) {
 
+        }
 
     }
 }
