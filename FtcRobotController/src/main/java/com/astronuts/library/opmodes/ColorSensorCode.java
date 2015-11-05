@@ -11,17 +11,18 @@ import com.qualcomm.robotcore.hardware.DigitalChannelController;
  * through the Method that will correct the raw Red, Green, and Blue data.
  *
  * Created by Baylee on 10/7/2015.
- * Last edited by Baylee on 10/21/15
+ * Last edited by Prescott on 11/4/15
  */
 
 public class ColorSensorCode extends OpMode {
     //Makes a variable that stores the values from the color sensor.
     ColorSensor colorSensor;
 
-    //Dont know yet. Will ask Eric.
+    //Creates a variable for the Device Interface Module that will allow us to set the color sensor
+    //to a specific channel.
     DeviceInterfaceModule cdim;
 
-    //Donow yet. will ask Eric.
+    //Sets a variable that will later set the channel for the color sensor.
     static final int LED_CHANNEL = 5;
 
     //Makes a variable that will be able to create a new instance of the CScorrection Class Method.
@@ -32,10 +33,10 @@ public class ColorSensorCode extends OpMode {
         //Gets the path to the Color Sensor through the Config file.
         colorSensor = hardwareMap.colorSensor.get("color_sensor");
 
-        //
+        //Maps the Device Interface Module.
         cdim = hardwareMap.deviceInterfaceModule.get("dim");
 
-        //
+        //Sets the color sensor's channel to 5.
         cdim.setDigitalChannelMode(LED_CHANNEL, DigitalChannelController.Mode.OUTPUT);
         cdim.setDigitalChannelState(LED_CHANNEL, false);
 

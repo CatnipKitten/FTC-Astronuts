@@ -35,7 +35,10 @@ public class ColorSensorTestScenario extends LinearOpMode {
         ultrasonic = hardwareMap.ultrasonicSensor.get("ultrasonic_sensor");
         lightSensor = hardwareMap.lightSensor.get("light_sensor");
         color = hardwareMap.colorSensor.get("color_sensor");
+
         cdim = hardwareMap.deviceInterfaceModule.get("dim");
+        cdim.setDigitalChannelMode(LED_CHANNEL, DigitalChannelController.Mode.OUTPUT);
+        cdim.setDigitalChannelState(LED_CHANNEL, false);
 
         motorRight = hardwareMap.dcMotor.get("motor_right");
         motorLeft = hardwareMap.dcMotor.get("motor_left");

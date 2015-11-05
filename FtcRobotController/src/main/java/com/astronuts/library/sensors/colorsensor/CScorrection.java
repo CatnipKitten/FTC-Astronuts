@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.ColorSensor;
  * the object it is reading.
  *
  * Created by Baylee on 10/14/2015.
- * Last Edited by Baylee on 10/21/15
+ * Last Edited by Baylee on 10/14/15
  */
 public class CScorrection {
     //Makes a variable that will be able to store the corrected blue color sensor values.
