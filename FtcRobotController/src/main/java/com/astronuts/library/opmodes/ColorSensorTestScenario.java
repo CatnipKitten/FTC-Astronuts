@@ -85,10 +85,10 @@ public class ColorSensorTestScenario extends LinearOpMode {
 
         while(ultrasonicDistance.getdistance('i') >= 1) {
             if (lightSensor < (light value of white tape)) {
-                encoder.move();
+                left.move(100, .2);
             }
-            if (lightSensor > (light value of black pads)) {
-
+            if (lightSensor >= (light value of black pads)) {
+                encoder.move(1, 'c');
             }
 
     }
