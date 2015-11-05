@@ -12,14 +12,21 @@ import com.qualcomm.robotcore.hardware.UltrasonicSensor;
  */
 public class UltrasonicDistance {
     //Makes a variable that will be able to store the value for centimeters.
-    public static double centimeters;
+    protected double centimeters;
     //Makes a variable that will be able to store the value for inches.
-    public static double inches;
+    protected double inches;
+
+    protected UltrasonicSensor ultrasonic;
+
+    public UltrasonicDistance(UltrasonicSensor ultrasonic) {
+        this.ultrasonic = ultrasonic;
+    }
+
 
     //Creates Method for converting Ultrasonic Value to Centimeters and Inches.
-    public double getcentimeters(UltrasonicSensor ultrasonicSensor, char unit) {
+    public double getdistance(char unit) {
         //Gets the raw value from the sensor.
-        double raw = ultrasonicSensor.getUltrasonicLevel();
+        double raw = ultrasonic.getUltrasonicLevel();
 
         //Converts raw data into Centimeters.
         centimeters = raw - 3;
