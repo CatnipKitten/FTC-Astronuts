@@ -78,14 +78,12 @@ public class ColorSensorTestScenario extends LinearOpMode {
         motorLeft.setDirection(DcMotor.Direction.REVERSE);
 
         CScorrection cscorrection = new CScorrection();
-        UltrasonicDistance ultrasonicDistance = new UltrasonicDistance();
-
-
+        UltrasonicDistance ultrasonicDistance = new UltrasonicDistance(ultrasonic);
 
         waitForStart(); //Starts the actual program.
         SafeSnooze.snooze(RobotData.timeDelay, 's');
 
-        while ()
+        while(UltrasonicSensor ultrasonic)
 
             if (lightSensor < (light value of white tape)) {
 
