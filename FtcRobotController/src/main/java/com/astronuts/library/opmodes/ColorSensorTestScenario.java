@@ -1,6 +1,12 @@
 package com.astronuts.library.opmodes;
 
+import com.astronuts.library.RobotData;
+import com.astronuts.library.chudsCode.SafeSnooze;
+import com.astronuts.library.movement.EncoderMotor;
+import com.astronuts.library.movement.InitEncoder;
 import com.astronuts.library.movement.InitServo;
+import com.astronuts.library.sensors.colorsensor.CScorrection;
+import com.astronuts.library.sensors.ultrasonic.UltrasonicDistance;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -42,6 +48,11 @@ public class ColorSensorTestScenario extends LinearOpMode {
     //Sets variable that is used for the color sensor channel.
     static final int LED_CHANNEL = 5;
 
+    EncoderMotor left = new EncoderMotor(motorLeft);
+    EncoderMotor right = new EncoderMotor(motorRight);
+
+    InitEncoder encoder = new InitEncoder(left, right, motorMaxPower);
+
     @Override
     public void  runOpMode () throws InterruptedException {
         //Maps the sensors.
@@ -66,15 +77,23 @@ public class ColorSensorTestScenario extends LinearOpMode {
         //Reverses the Left Motor.
         motorLeft.setDirection(DcMotor.Direction.REVERSE);
 
+        CScorrection cscorrection = new CScorrection();
+        UltrasonicDistance ultrasonicDistance = new UltrasonicDistance();
+
+
+
         waitForStart(); //Starts the actual program.
+        SafeSnooze.snooze(RobotData.timeDelay, 's');
 
-        if (lightSensor < (light value of white tape)) {
+        while ()
 
-        }
+            if (lightSensor < (light value of white tape)) {
 
-        if (lightSensor > (light value of black pads)) {
+            }
 
-        }
+            if (lightSensor > (light value of black pads)) {
+
+            }
 
 
 
