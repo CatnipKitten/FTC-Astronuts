@@ -11,13 +11,13 @@ import com.qualcomm.robotcore.hardware.ColorSensor;
  * Last Edited by Baylee on 10/14/15
  */
 public class CScorrection {
-    //Makes a variable that will be able to store the corrected blue color sensor values.
+    //Makes a variable that will store the corrected blue color sensor values.
     public float blueCorrected;
 
-    //Makes a variable that will be able to store the corrected green color sensor values.
+    //Makes a variable that will store the corrected green color sensor values.
     public float greenCorrected;
 
-    //Makes a variable that will be able to store the corrected red color sensor values.
+    //Makes a variable that will store the corrected red color sensor values.
     public float redCorrected;
 
     //Makes a variable that will be able to correct and calibrate the color sensor.

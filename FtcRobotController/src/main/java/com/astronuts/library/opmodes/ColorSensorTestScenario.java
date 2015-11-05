@@ -20,39 +20,49 @@ import com.qualcomm.robotcore.hardware.UltrasonicSensor;
  * Last Edited by Prescott on 10/28/15.
  */
 public class ColorSensorTestScenario extends LinearOpMode {
-    //Creates a variable for
+    //Initializes the motors
     DcMotor motorRight;
     DcMotor motorLeft;
 
+    //Initializes the sensors.
     LightSensor lightSensor;
     UltrasonicSensor ultrasonic;
     ColorSensor color;
     DeviceInterfaceModule cdim;
 
+    //Sets variable that is used for the color sensor channel.
     static final int LED_CHANNEL = 5;
 
     @Override
     public void  runOpMode () throws InterruptedException {
+        //Maps the sensors.
         ultrasonic = hardwareMap.ultrasonicSensor.get("ultrasonic_sensor");
         lightSensor = hardwareMap.lightSensor.get("light_sensor");
         color = hardwareMap.colorSensor.get("color_sensor");
 
+        //Maps the Device Interface Module
         cdim = hardwareMap.deviceInterfaceModule.get("dim");
+        //Sets the channel for the color sensor.
         cdim.setDigitalChannelMode(LED_CHANNEL, DigitalChannelController.Mode.OUTPUT);
         cdim.setDigitalChannelState(LED_CHANNEL, false);
 
+        //Maps the motors.
         motorRight = hardwareMap.dcMotor.get("motor_right");
         motorLeft = hardwareMap.dcMotor.get("motor_left");
+        //Reverses the Left Motor.
         motorLeft.setDirection(DcMotor.Direction.REVERSE);
-
-        cdim.setDigitalChannelMode(LED_CHANNEL, DigitalChannelController.Mode.OUTPUT);
-        cdim.setDigitalChannelState(LED_CHANNEL, false);
 
         waitForStart();
 
         if (lightSensor < (light value of white tape)) {
 
         }
+
+        if (lightSensor > (light value of black pads)) {
+
+        }
+
+
 
     }
 }

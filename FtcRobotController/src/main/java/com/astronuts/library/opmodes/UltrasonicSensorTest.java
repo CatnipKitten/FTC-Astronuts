@@ -13,7 +13,7 @@ import com.qualcomm.robotcore.hardware.UltrasonicSensor;
  * Last edited by Prescott on 10/21/15.
  */
 public class UltrasonicSensorTest extends OpMode {
-    //Makes a variable that stores the values from the Ultrasonic Sensor.
+    //Initializes the Ultrasonic Sensor
     UltrasonicSensor ultrasonicsensor;
     //Creates a variable that will be able to make a new instance of the Ultrasonic Distance Class.
     UltrasonicDistance test;
