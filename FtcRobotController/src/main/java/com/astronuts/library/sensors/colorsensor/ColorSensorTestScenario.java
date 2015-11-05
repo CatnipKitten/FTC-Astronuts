@@ -35,7 +35,7 @@ public class ColorSensorTestScenario extends LinearOpMode {
         ultrasonic = hardwareMap.ultrasonicSensor.get("ultrasonic_sensor");
         lightSensor = hardwareMap.lightSensor.get("light_sensor");
         color = hardwareMap.colorSensor.get("color_sensor");
-        cdim = hardwareMap.colorSensor.get("dim");
+        cdim = hardwareMap.deviceInterfaceModule.get("dim");
 
         motorRight = hardwareMap.dcMotor.get("motor_right");
         motorLeft = hardwareMap.dcMotor.get("motor_left");
@@ -46,7 +46,7 @@ public class ColorSensorTestScenario extends LinearOpMode {
 
         waitForStart();
 
-        if (lightSensor )
+
 
     }
 }
