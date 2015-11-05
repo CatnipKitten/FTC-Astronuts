@@ -1,5 +1,6 @@
 package com.astronuts.library.opmodes;
 
+import com.astronuts.library.movement.InitServo;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -8,6 +9,7 @@ import com.qualcomm.robotcore.hardware.DigitalChannelController;
 import com.qualcomm.robotcore.hardware.LightSensor;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.*;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 
 /**
@@ -23,6 +25,13 @@ public class ColorSensorTestScenario extends LinearOpMode {
     //Initializes the motors
     DcMotor motorRight;
     DcMotor motorLeft;
+    final static double motorMaxPower = 20;
+
+    Servo leftServo;
+    Servo rightServo;
+    InitServo servoLeft = new InitServo(leftServo, 0.1, 0.65, 0.01);
+    InitServo servoRight = new InitServo(rightServo, 0.0, 0.7, 0.01);
+
 
     //Initializes the sensors.
     LightSensor lightSensor;
@@ -40,6 +49,11 @@ public class ColorSensorTestScenario extends LinearOpMode {
         lightSensor = hardwareMap.lightSensor.get("light_sensor");
         color = hardwareMap.colorSensor.get("color_sensor");
 
+        leftServo = hardwareMap.servo.get("servo_left");
+        rightServo = hardwareMap.servo.get("servo_right");
+        servoLeft.init();
+        servoRight.init();
+
         //Maps the Device Interface Module
         cdim = hardwareMap.deviceInterfaceModule.get("dim");
         //Sets the channel for the color sensor.
@@ -52,7 +66,7 @@ public class ColorSensorTestScenario extends LinearOpMode {
         //Reverses the Left Motor.
         motorLeft.setDirection(DcMotor.Direction.REVERSE);
 
-        waitForStart();
+        waitForStart(); //Starts the actual program.
 
         if (lightSensor < (light value of white tape)) {
 
