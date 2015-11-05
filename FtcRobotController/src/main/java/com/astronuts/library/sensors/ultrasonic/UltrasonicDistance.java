@@ -17,7 +17,7 @@ public class UltrasonicDistance {
     public static double inches;
 
     //Creates Method for converting Ultrasonic Value to Centimeters and Inches.
-    public double getcentimeters(UltrasonicSensor ultrasonicSensor) {
+    public double getcentimeters(UltrasonicSensor ultrasonicSensor, char unit) {
         //Gets the raw value from the sensor.
         double raw = ultrasonicSensor.getUltrasonicLevel();
 
@@ -26,5 +26,14 @@ public class UltrasonicDistance {
 
         //Converts raw data into Inches.
         inches = centimeters / 2.54;
+
+        switch(unit) {
+            case'c':
+                return centimeters;
+            break;
+            case'i'
+                return inches;
+            break;
+        }
     }
 }
