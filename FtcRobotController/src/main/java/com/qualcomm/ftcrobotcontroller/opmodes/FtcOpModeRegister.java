@@ -50,6 +50,9 @@ public class FtcOpModeRegister implements OpModeRegister {
      */
     public void register(OpModeManager manager) {
 
+        manager.register("Drive", CompetionBotTest5.class);
+
+
     /*
      * register your op modes here.
      * The first parameter is the name of the op mode
