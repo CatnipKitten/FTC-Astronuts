@@ -1,4 +1,4 @@
-package com.qualcomm.ftcrobotcontroller.opmodes;
+package com.astronuts.library.opmodefinal;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.util.Range;
 /**
  * Created by robotics on 10/28/2015.
  */
-public class CompetionBotTest5 extends OpMode {
+public class TeleOP extends OpMode {
     final static float MOTOR_MAX_POWER = (float) 1.0;
 
     final static double LEFT_BUTTON_MIN_RANGE = 0.0;

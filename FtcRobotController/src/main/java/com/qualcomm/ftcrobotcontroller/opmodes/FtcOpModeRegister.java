@@ -31,9 +31,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
+import com.astronuts.library.opmodefinal.Autonomous;
+import com.astronuts.library.opmodefinal.TeleOP;
 import com.astronuts.library.opmodes.K9LinearOp;
-import com.astronuts.library.opmodes.basiclinearop;
-import com.astronuts.library.opmodes.basicteleop;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
@@ -50,7 +50,7 @@ public class FtcOpModeRegister implements OpModeRegister {
      */
     public void register(OpModeManager manager) {
 
-        manager.register("Drive", CompetionBotTest5.class);
+        manager.register("Drive", TeleOP.class);
 
 
     /*
@@ -100,8 +100,8 @@ public class FtcOpModeRegister implements OpModeRegister {
     //manager.register("PushBotIrSeek", PushBotIrSeek.class);
     //manager.register("PushBotSquare", PushBotSquare.class);
     */
-        manager.register("TeleOP", basicteleop.class);
-        manager.register("K9LinearOp", K9LinearOp.class);
-        manager.register("LinearOP", basiclinearop.class);
+        manager.register("K9LinearOp-test", K9LinearOp.class);
+        manager.register("Autonomous", Autonomous.class);
+        manager.register("TeleOP", TeleOP.class);
     }
 }

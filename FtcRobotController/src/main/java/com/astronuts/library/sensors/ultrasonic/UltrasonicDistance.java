@@ -27,7 +27,7 @@ public class UltrasonicDistance {
     public double getdistance(char unit) {
         //Gets the raw value from the sensor.
         double raw = ultrasonic.getUltrasonicLevel();
-
+        double returnType = 1;
         //Converts raw data into Centimeters.
         centimeters = raw - 3;
 
@@ -36,11 +36,16 @@ public class UltrasonicDistance {
 
         switch(unit) {
             case'c':
-                return centimeters;
-            break;
-            case'i'
-                return inches;
-            break;
+                returnType = 1;
+            case'i':
+                returnType = 2;
+        }
+
+        if (returnType == 1){
+            return centimeters;
+        }
+        else{
+            return inches;
         }
     }
 }

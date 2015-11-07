@@ -33,7 +33,7 @@ public class InitServo{
         currentPosition = desiredPosition;
         servo.setPosition(currentPosition);
     }
-    public void move(char sign)
+    public void changeDelta(char sign)
     {
         this.sign = sign;
         switch(sign)

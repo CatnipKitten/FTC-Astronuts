@@ -1,4 +1,4 @@
-package com.astronuts.library.chudsCode;
+/*package com.astronuts.library.chudsCode;
 
 import android.util.Log;
 
@@ -80,3 +80,4 @@ public class adafruitIMU {
     }
 
 }
+*/

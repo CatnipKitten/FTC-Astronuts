@@ -1,4 +1,4 @@
-package com.astronuts.library.opmodes;
+/*package com.astronuts.library.opmodes;
 
 import com.astronuts.library.sensors.ultrasonic.UltrasonicDistance;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
@@ -11,7 +11,7 @@ import com.qualcomm.robotcore.hardware.UltrasonicSensor;
  *
  * Created by Prescott on 10/7/15.
  * Last edited by Prescott on 10/21/15.
- */
+
 public class UltrasonicSensorTest extends OpMode {
     //Initializes the Ultrasonic Sensor
     UltrasonicSensor ultrasonicsensor;
@@ -37,3 +37,4 @@ public class UltrasonicSensorTest extends OpMode {
         telemetry.addData("Inches", test.inches);
     }
 }
+*/

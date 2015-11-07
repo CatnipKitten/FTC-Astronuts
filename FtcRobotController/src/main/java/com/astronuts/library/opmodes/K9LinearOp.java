@@ -42,20 +42,20 @@ public class K9LinearOp extends LinearOpMode {
         colorSensor = hardwareMap.colorSensor.get("color_sensor");
 
         CScorrection cscorrection = new CScorrection();
-        UltrasonicDistance ultrasonicDistance = new UltrasonicDistance();
+        UltrasonicDistance ultrasonicDistance = new UltrasonicDistance(ultraSonic);
 
         waitForStart();
 
         while(true) {
 
-            ultrasonicDistance.getcentimeters(ultraSonic);
+            ultrasonicDistance.getdistance('i');
             cscorrection.getColors(colorSensor);
             float redValue = cscorrection.redCorrected;
             float blueValue = cscorrection.blueCorrected;
             float greenValue = cscorrection.greenCorrected;
 
-            telemetry.addData("Ultrasonic_Sensor_Centimeters", ultrasonicDistance.centimeters);
-            telemetry.addData("Ultrasonic_Sensor_Inches", ultrasonicDistance.inches);
+            telemetry.addData("Ultrasonic_Sensor_Centimeters", ultrasonicDistance.getdistance('c'));
+            telemetry.addData("Ultrasonic_Sensor_Inches", ultrasonicDistance.getdistance('i'));
             telemetry.addData("Red_Value", redValue);
             telemetry.addData("Blue_Value", blueValue);
             telemetry.addData("Green_Value", greenValue);
