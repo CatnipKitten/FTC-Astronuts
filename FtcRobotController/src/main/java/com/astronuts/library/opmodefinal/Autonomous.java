@@ -23,8 +23,8 @@ import com.qualcomm.robotcore.hardware.UltrasonicSensor;
  * and pushes one of the buttons based off of the team color.
  *
  *
- * Created by Prescott on 10/28/15.
- * Last Edited by Prescott on 10/28/15.
+ * Created by Zach on 10/28/15.
+ * Last Edited by Zach on 10/28/15.
  */
 public class Autonomous extends LinearOpMode {
     //Initializes the motors
