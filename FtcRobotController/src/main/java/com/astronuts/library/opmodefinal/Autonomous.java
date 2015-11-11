@@ -110,6 +110,7 @@ public class Autonomous extends LinearOpMode {
         }else{
             servoRight.move(.7);
         }
+        servoColor.move(0.0);
 
         Drive.driveByDistance(-16, 'i', left, right);
 
